@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Your Scores:</h2>
+<div class="container">
+    <div class="cart-columns" style="padding: 20px; margin: 20px;">
+        <div class="card" text-align="centre" style="width: 25rem; border: 4px solid">
+            <div class="card-body">
+                <p class="cart-text">Correct Answers:{{correct}}</p>
+                <p class="cart-text">Incorrect Answers: {{wrong}}</p>
+                <p class="cart-text">Total Questions: {{total}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="{% url 'home' %}"><h3>Try Again</h3></a>
+{% endblock %}

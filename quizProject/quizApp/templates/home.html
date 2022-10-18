@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+<h1>Django Quiz Application </h1>
+<div class="row px-xl-5">
+    <div class="col-lg-7 mb-5">
+        <div class="contact-form bg-light p-30">
+            <div id="success"></div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {% for q in questions %}
+                <div class="form-group">
+                    <label for="question"><b>{{q.question}}</b></label>
+                </div>
+                <br>
+                <div class="form-check">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="{{q.question}}" id="radio1" value="{{q.option1}}">
+                        <label class="form-check-label" for="radio1">
+                            {{q.option1}}
+                        </label>
+                    </div>
+                </div>
+                <div class="form-check">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="{{q.question}}" id="radio2" value="{{q.option2}}">
+                        <label class="form-check-label" for="radio2">
+                            {{q.option2}}
+                        </label>
+                    </div>
+                </div>
+                <div class="form-check">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="{{q.question}}" id="radio3" value="{{q.option3}}">
+                        <label class="form-check-label" for="radio3">
+                            {{q.option3}}
+                        </label>
+                    </div>
+                </div>
+                <div class="form-check">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="{{q.question}}" id="radio4" value="{{q.option4}}">
+                        <label class="form-check-label" for="radio4">
+                            {{q.option4}}
+                        </label>
+                    </div>
+                </div>
+                <br>
+                </div>
+                 {% endfor %}
+                <input id="timer" type="hidden" name="timer" value="">
+                <br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+             </form><br>
+             <h2>
+             <a href="{% url 'addquestion' %}">Click here </a>
+             to add new question
+            </h2>
+        </div>
+    </div>
+    {% endblock %}

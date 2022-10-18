@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron container mt-5">
+    <div class="col-md-6">
+        <h1>Add Question </h1>
+            <div class="card card-body">
+                <form action="" method="post">
+                    {% csrf_token %}
+                     {{form.as_p}}
+                    <br>
+                    <input type="submit"  class="btn btn-primary" name="Submit">
+                </form>
+                <a href="{% url 'home' %}"><h2>Click here go home page</h2></a>
+            </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
