@@ -13,7 +13,6 @@ def home(request):
             total+=1
             if q.ans== request.POST.get(q.question):
                 correct+=1
-                score+=1
             else:
                 wrong+=1
         context={
